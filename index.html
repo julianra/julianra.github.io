@@ -2,88 +2,365 @@
 <html lang="nl" data-bs-theme="dark">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Julian Rai Anwor — Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <link rel="stylesheet" href="styles/styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Julian Rai Anwor — Portfolio</title>
+
+  <!-- Bootstrap 5 (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+  <style>
+    /* Subtiele “tech” look zonder te overdesignen */
+    .hero {
+      background: radial-gradient(1200px circle at 20% 10%,
+          rgba(13, 110, 253, 0.18),
+          transparent 45%);
+    }
+
+    .tag {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .card-hover {
+      transition: transform 0.12s ease, border-color 0.12s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-2px);
+      border-color: rgba(13, 110, 253, 0.5);
+    }
+
+    .muted-link {
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+    }
+
+    .muted-link:hover {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg border-bottom border-secondary-subtle sticky-top">
-        <div class="container">
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg border-bottom border-secondary-subtle">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#">julianra</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-            <a class="navbar-brand fw-semibold" href="#">Portfolio</a>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="#projects">Projecten</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Over mij</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
-                aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+  <!-- HERO -->
+  <header class="hero py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-8">
+          <h1 class="display-6 fw-bold mb-2">Julian Rai Anwor</h1>
+          <p class="lead mb-3">
+            Software Developer (Junior) — Embedded &amp; IoT — Unity • Flutter • Django
+          </p>
 
-            <div class="collapse navbar-collapse" id="nav">
-                <ul class="navbar-nav ms-auto gap-1">
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projecten</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Over mij</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            <span class="badge rounded-pill tag">ESP32 / Arduino</span>
+            <span class="badge rounded-pill tag">Realtime data</span>
+            <span class="badge rounded-pill tag">API &amp; JSON</span>
+            <span class="badge rounded-pill tag">Prototyping</span>
+          </div>
 
-
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-primary" href="#projects">Bekijk projecten</a>
+            <a class="btn btn-outline-light" href="https://github.com/julianra" target="_blank" rel="noreferrer">
+              GitHub profiel
+            </a>
+            <a class="btn btn-outline-secondary" href="#contact">Contact</a>
+          </div>
         </div>
-    </nav>
 
-    <header class="hero py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-8">
-                    <div class="col">
-                        <h1 class="display-6 fw-bold">Julian Rai Anwor</h1>
-                        <p class="lead">Software Developer (Junior) — Embedded &amp; IoT</p>
-                        <div class="d-flex gap-2 flex-wrap">
-                            <span class="badge rounded-pill tag">ESP32</span>
-                            <span class="badge rounded-pill tag">Rust</span>
-                            <span class="badge rounded-pill tag">Flutter</span>
-                            <span class="badge rounded-pill tag">Python</span>
-                        </div>
+        <div class="col-12 col-lg-4">
+          <div class="card border-secondary-subtle">
+            <div class="card-body">
+              <h2 class="h6 text-uppercase text-secondary mb-2">Focus</h2>
+              <ul class="mb-0">
+                <li>Hardware–software integratie</li>
+                <li>Embedded/IoT prototypes</li>
+                <li>Apps &amp; tooling (Flutter/Django)</li>
+                <li>Praktisch probleemoplossen</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-                    </div>
+  <!-- PROJECTS -->
+  <section id="projects" class="py-5">
+    <div class="container">
+      <div class="d-flex align-items-end justify-content-between gap-3 mb-3">
+        <div>
+          <h2 class="h3 mb-1">Projecten</h2>
+          <p class="text-secondary mb-0">
+            Korte selectie. Elk project heeft een duidelijke tech-focus en learnings.
+          </p>
+        </div>
+        <a class="muted-link" href="https://github.com/julianra?tab=repositories" target="_blank" rel="noreferrer">Alle
+          repos →</a>
+      </div>
+
+      <div class="row g-3">
+        <!-- Project 1 -->
+        <div class="col-12 col-lg-6">
+          <div class="card card-hover h-100 border-secondary-subtle">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start gap-3">
+                <div>
+                  <h3 class="h5 mb-1">ELYSIA (in progress)</h3>
+                  <p class="text-secondary mb-2">
+                    Privacy-first, modulair platform (core + modules) met focus op lokaal netwerk,
+                    plugin-architectuur en device integraties.
+                  </p>
                 </div>
-                <div class="col-12 col-lg-4">
-                    <div class="card border-secondary-subtle bg-transparent">
-                        <div class="card-body">
+                <span class="badge text-bg-secondary">Rust / TS</span>
+              </div>
 
-                            <h2 class="h6 text-uppercase text-secondary mb-3">
-                                Focus
-                            </h2>
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="badge text-bg-dark border border-secondary-subtle">Architecture</span>
+                <span class="badge text-bg-dark border border-secondary-subtle">Modules</span>
+                <span class="badge text-bg-dark border border-secondary-subtle">Local-first</span>
+              </div>
 
-                            <ul class="mb-0 ps-3">
-                                <li>ESP32 en sensoren koppelen aan apps</li>
-                                <li>Realtime data van hardware visualiseren</li>
-                                <li>Flutter apps voor IoT-projecten</li>
-                                <li>Nieuwe ideeën snel prototypen</li>
-                                <li>Probleem oplossend denken</li>
-                            </ul>
-
-                        </div>
-                    </div>
-
-                </div>
 
             </div>
+          </div>
         </div>
-    </header>
-    <footer class="py-4 border-top border-secondary-subtle mt-5">
-  <div class="container text-center text-secondary small">
-    Portfolio in opbouw — deze site wordt nog verder aangevuld
-  </div>
-</footer>
 
+        <!-- Project 2 -->
+        <div class="col-12 col-lg-6">
+          <div class="card card-hover h-100 border-secondary-subtle">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start gap-3">
+                <div>
+                  <h3 class="h5 mb-1">Unity + ESP32 sensorintegratie</h3>
+                  <p class="text-secondary mb-2">
+                    Realtime sensordata van ESP32 verwerken in Unity. Focus op communicatie, timing
+                    en dataflow naar gameplay.
+                  </p>
+                </div>
+                <span class="badge text-bg-secondary">Unity / ESP32</span>
+              </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="badge text-bg-dark border border-secondary-subtle">Realtime</span>
+                <span class="badge text-bg-dark border border-secondary-subtle">Sensors</span>
+                <span class="badge text-bg-dark border border-secondary-subtle">Integration</span>
+              </div>
+
+              <!-- TODO: vervang door echte repo-link -->
+              <a class="btn btn-sm btn-outline-light" href="https://github.com/julianra/fietsen_op_rollen"
+                target="_blank" rel="noopener noreferrer">
+                github repo
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-12 col-lg-6">
+          <div class="card card-hover h-100 border-secondary-subtle">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start gap-3">
+                <div>
+                  <h3 class="h5 mb-1">Flutter personeelsplanning app</h3>
+                  <p class="text-secondary mb-2">
+                    mobiele app die gebruikt is voor het plannen van personeel in de events.
+                  </p>
+                </div>
+                <span class="badge text-bg-secondary">Flutter</span>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="badge text-bg-dark border border-secondary-subtle">firebase</span>
+                <span class="badge text-bg-dark border border-secondary-subtle">dart</span>
+                <span class="badge text-bg-dark border border-secondary-subtle">realtime database</span>
+              </div>
+
+              <!-- TODO: vervang door echte repo-link -->
+              <a class="btn btn-sm btn-outline-light" href="https://github.com/julianra/unitj"
+                target="_blank" rel="noopener noreferrer">
+                github repo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="col-12 col-lg-6">
+          <div class="card card-hover h-100 border-secondary-subtle">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start gap-3">
+                <div>
+                  <h3 class="h5 mb-1">Django</h3>
+                  <p class="text-secondary mb-2">
+                    verschillende django projecten
+                  </p>
+                </div>
+                <span class="badge text-bg-secondary">Django</span>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="badge text-bg-dark border border-secondary-subtle">Backend</span>
+                <span class="badge text-bg-dark border border-secondary-subtle">DB</span>
+                <span class="badge text-bg-dark border border-secondary-subtle">Auth</span>
+              </div>
+
+              <!-- TODO: vervang door echte repo-link -->
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-5 border-top border-secondary-subtle">
+    <div class="container">
+      <h2 class="h3 mb-3">Skills</h2>
+
+      <div class="row g-3">
+        <div class="col-12 col-lg-4">
+          <div class="card h-100 border-secondary-subtle">
+            <div class="card-body">
+              <h3 class="h6 text-uppercase text-secondary">Languages</h3>
+              <ul class="mb-0">
+                <li>Python</li>
+                <li>Dart</li>
+                <li>C#</li>
+                <li>Rust (basis)</li>
+                <li>JavaScript</li>
+                <li>Svelte</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <div class="card h-100 border-secondary-subtle">
+            <div class="card-body">
+              <h3 class="h6 text-uppercase text-secondary">Frameworks</h3>
+              <ul class="mb-0">
+                <li>Django</li>
+                <li>Flutter</li>
+                <li>Unity</li>
+                <li>Bootstrap</li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <div class="card h-100 border-secondary-subtle">
+            <div class="card-body">
+              <h3 class="h6 text-uppercase text-secondary">Embedded</h3>
+              <ul class="mb-0">
+                <li>ESP32</li>
+                <li>Arduino</li>
+                <li>Sensors &amp; prototyping</li>
+                <li>Serial/WiFi communication</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-5 border-top border-secondary-subtle">
+    <div class="container">
+      <h2 class="h3 mb-3">Over mij</h2>
+      <div class="row g-3">
+        <div class="col-12 col-lg-8">
+          <p class="text-secondary mb-0">
+            Ik bouw graag systemen waar software en hardware samenkomen. Ik leer het snelst door te bouwen: prototypes,
+            integraties en tools. Momenteel focus ik op projecten rond embedded/IoT en apps (Flutter/Django), met
+            aandacht voor structuur, betrouwbaarheid en duidelijke documentatie.
+          </p>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="card border-secondary-subtle">
+            <div class="card-body">
+              <h3 class="h6 text-uppercase text-secondary">Zoek ik</h3>
+              <ul class="mb-0">
+                <li>Junior software / embedded rol</li>
+                <li>Mentorship &amp; groei</li>
+                <li>Projecten met integratie</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5 border-top border-secondary-subtle">
+    <div class="container">
+      <h2 class="h3 mb-3">Contact</h2>
+      <div class="row g-3">
+        <div class="col-12 col-lg-6">
+          <div class="card border-secondary-subtle">
+            <div class="card-body">
+              <p class="mb-2">
+                <strong>Email:</strong>
+                <a class="muted-link" href="mailto:jraianwor@gmail.com">jraianwor@gmail.com</a>
+              </p>
+              <p class="mb-0">
+                <strong>GitHub:</strong>
+                <a class="muted-link" href="https://github.com/julianra" target="_blank"
+                  rel="noreferrer">github.com/julianra</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 border-top border-secondary-subtle">
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <span class="text-secondary">© <span id="y"></span> Julian Rai Anwor</span>
+      <span class="text-secondary">Berlaar, BE</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>
